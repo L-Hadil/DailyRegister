@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/startFragment">
+
+    <!-- Accueil -->
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.dailyregister.ui.fragments.StartFragment"
+        android:label="Accueil"
+        tools:layout="@layout/fragment_start">
+
+        <action
+            android:id="@+id/action_startFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Inscription -->
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.dailyregister.ui.fragments.RegistrationFragment"
+        android:label="Inscription">
+
+        <action
+            android:id="@+id/action_registrationFragment_to_displayFragment"
+            app:destination="@id/displayFragment" />
+    </fragment>
+
+    <!-- Résumé utilisateur après inscription -->
+    <fragment
+        android:id="@+id/displayFragment"
+        android:name="com.example.dailyregister.ui.fragments.DisplayFragment"
+        android:label="Résumé">
+
+        <action
+            android:id="@+id/action_displayFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!-- Connexion -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.dailyregister.ui.fragments.LoginFragment"
+        android:label="Connexion">
+
+        <action
+            android:id="@+id/action_loginFragment_to_planningFragment"
+            app:destination="@id/planningFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+
+    <!-- Saisie du planning -->
+    <fragment
+        android:id="@+id/planningFragment"
+        android:name="com.example.dailyregister.ui.fragments.PlanningFragment"
+        android:label="Planning">
+
+        <action
+            android:id="@+id/action_planningFragment_to_planningSummaryFragment"
+            app:destination="@id/planningSummaryFragment" />
+        <action
+            android:id="@+id/action_planningFragment_to_planningSummaryFragment"
+            app:destination="@id/planningSummaryFragment" />
+
+    </fragment>
+
+    <!-- Affichage des plannings -->
+    <fragment
+        android:id="@+id/planningSummaryFragment"
+        android:name="com.example.dailyregister.ui.fragments.PlanningSummaryFragment"
+        android:label="Résumé des plannings"
+        tools:layout="@layout/fragment_planning_summary" />
+</navigation>
